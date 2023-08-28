@@ -43,7 +43,7 @@ To train the U-Net model using the script, follow these steps:
 3-Run the script:
 
 ```
-python train_script.py --num_epoch NUM_EPOCHS --lr LEARNING_RATE --model_name MODEL_NAME.pth
+python train.py --num_epoch NUM_EPOCHS --lr LEARNING_RATE --model_name MODEL_NAME.pth
 
 ```
 
