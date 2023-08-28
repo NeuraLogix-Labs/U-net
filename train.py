@@ -4,7 +4,7 @@ import torch
 from torch.optim import Adam
 import tqdm
 from U_net import Unet
-from loss_function import Dice_Loss
+from loss_function import Jacard_loss
 from dataset import Dataset_Train
 from torch.utils.data import  DataLoader
 from torchvision import transforms
@@ -32,13 +32,12 @@ train_dataLoder = DataLoader (train_data , batch_size = 64 , shuffle = True)
 
 def train(num_epoch , lr  = 0.01) :
     #ò to be tracking the loss
-    list_loss = list()
     model = Unet()
 
     #ò check this link for survey of loss functions for semantic segmentation
          #ò https://arxiv.org/pdf/2006.14822.pdf
 
-    loss_fn = Dice_Loss()
+    loss_fn = Jacard_loss()
     
     optimizer = Adam(model.parameters() , lr = lr)
     loop_bar = tqdm(train_dataLoder)
